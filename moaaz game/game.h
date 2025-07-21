@@ -20,7 +20,12 @@ private slots:
     void on_back_from_instructions_clicked();
     void on_instruction_button_clicked();
     void on_rock_button_clicked();
+    void on_paper_button_clicked();
+    void on_scissor_button_clicked();
     void on_play_button_clicked();
+    void on_back_from_play_clicked();
+    void on_records_button_clicked();
+    void on_back_from_rec_clicked();
 private:
     Ui::gameClass* ui;
 };

@@ -1,13 +1,17 @@
 <RCC>
     <qresource prefix="/game">
-        <file>down-arrow.png</file>
         <file>arrow-left.png</file>
-        <file>up-arrow.png</file>
-        <file>logout.png</file>
-        <file>sign-in.png</file>
-        <file>scroll.png</file>
-        <file>stone.png</file>
-        <file>scissors.png</file>
+        <file>down-arrow.png</file>
         <file>mooaz.png</file>
+        <file>paper hand.png</file>
+        <file>right-arrow.png</file>
+        <file>rock hand.png</file>
+        <file>scissor hand.png</file>
+        <file>scissors.png</file>
+        <file>scroll.png</file>
+        <file>sign-in.png</file>
+        <file>stone.png</file>
+        <file>up-arrow.png</file>
+        <file>vs.png</file>
     </qresource>
 </RCC>

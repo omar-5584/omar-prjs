@@ -17,6 +17,8 @@ public:
     ~game();
 
 private slots:
+    void on_back_from_instructions_clicked();
+    void on_instruction_button_clicked();
     void on_rock_button_clicked();
     void on_paper_button_clicked();
     void on_scissor_button_clicked();

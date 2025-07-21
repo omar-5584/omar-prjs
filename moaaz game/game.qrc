@@ -1,4 +1,8 @@
 <RCC>
-    <qresource prefix="moaazgame">
+    <qresource prefix="/game">
+        <file>paper hand.png</file>
+        <file>scissor hand.png</file>
+        <file>rock hand.png</file>
+        <file>vs.png</file>
     </qresource>
 </RCC>

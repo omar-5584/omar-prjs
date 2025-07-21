@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>770</width>
-    <height>668</height>
+    <width>781</width>
+    <height>718</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,10 +18,22 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>-20</y>
-      <width>771</width>
-      <height>631</height>
+      <y>0</y>
+      <width>2301</width>
+      <height>1200</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>1920</width>
+      <height>1080</height>
+     </size>
     </property>
     <property name="styleSheet">
      <string notr="true">    background: qlineargradient(
@@ -38,7 +50,7 @@
 					</string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="welcome_pagePage1">
      <widget class="QLabel" name="label">
@@ -357,8 +369,8 @@ background-color: #f2e8dc;
      <widget class="QLabel" name="the_title">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>50</y>
+        <x>280</x>
+        <y>60</y>
         <width>231</width>
         <height>31</height>
        </rect>
@@ -441,8 +453,8 @@ background-color: #f2e8dc;
      <widget class="QLabel" name="written_rules">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>390</y>
+        <x>90</x>
+        <y>380</y>
         <width>551</width>
         <height>201</height>
        </rect>
@@ -547,9 +559,9 @@ background-color: #f2e8dc;
      <widget class="QPushButton" name="back_from_instructions">
       <property name="geometry">
        <rect>
-        <x>600</x>
-        <y>510</y>
-        <width>101</width>
+        <x>340</x>
+        <y>630</y>
+        <width>191</width>
         <height>51</height>
        </rect>
       </property>
@@ -627,7 +639,7 @@ background-color: #f2e8dc;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>770</width>
+     <width>781</width>
      <height>21</height>
     </rect>
    </property>

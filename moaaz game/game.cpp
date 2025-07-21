@@ -68,7 +68,6 @@ void game::on_instruction_button_clicked()
     ui->arrow4_3->setPixmap(view10.scaled(ui->arrow4_3->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
     ui->arrow4_3->setScaledContents(true);
 
-
     QPixmap view11(":/game/arrow-left.png");
     ui->arrow4_4->setPixmap(view11.scaled(ui->arrow4_4->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
     ui->arrow4_4->setScaledContents(true);

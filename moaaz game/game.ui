@@ -43,7 +43,7 @@
 					</string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="welcome_pagePage1">
      <widget class="QLabel" name="label">
@@ -51,7 +51,7 @@
        <rect>
         <x>50</x>
         <y>30</y>
-        <width>631</width>
+        <width>641</width>
         <height>31</height>
        </rect>
       </property>
@@ -70,7 +70,7 @@ background-color: #f2e8dc;
 							</string>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; color:#818100;&quot;&gt;WELCOME TO &amp;quot; ROCK &amp;amp; PAPER &amp;amp; SCISSORS &amp;quot; GAME&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; color:#818100;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; color:#000000;&quot;&gt;WELCOME TO &amp;quot; ROCK &amp;amp; PAPER &amp;amp; SCISSORS &amp;quot; GAME&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; color:#000000;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="instruction_button">

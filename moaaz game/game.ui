@@ -17,7 +17,7 @@
    <widget class="QStackedWidget" name="welcome_page">
     <property name="geometry">
      <rect>
-      <x>-10</x>
+      <x>-20</x>
       <y>10</y>
       <width>1920</width>
       <height>1080</height>
@@ -43,7 +43,7 @@
 					</string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="welcome_pagePage1">
      <widget class="QLabel" name="label">
@@ -496,105 +496,6 @@ border-radius: 10px;
      <property name="autoFillBackground">
       <bool>false</bool>
      </property>
-     <widget class="QTableWidget" name="record_table">
-      <property name="geometry">
-       <rect>
-        <x>200</x>
-        <y>210</y>
-        <width>371</width>
-        <height>121</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border: 2px solid #8B5E3C;
-border-radius: 10px;
-background-color: #f2e8dc;
-
-								color: #5c3b1e;
-								font-family: 'Georgia', serif;
-								font-size: 10px;
-								font-weight: bold;
-								letter-spacing: 1px;
-								text-align: center;
-								text-shadow: 1px 1px 2px #e0c5a1;
-							</string>
-      </property>
-      <row>
-       <property name="text">
-        <string>New Row</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>New Row</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>New Row</string>
-       </property>
-      </row>
-      <column>
-       <property name="text">
-        <string>New Column</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>New Column</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>New Column</string>
-       </property>
-      </column>
-      <item row="0" column="0">
-       <property name="text">
-        <string>10</string>
-       </property>
-      </item>
-      <item row="0" column="1">
-       <property name="text">
-        <string>20</string>
-       </property>
-      </item>
-      <item row="0" column="2">
-       <property name="text">
-        <string>30</string>
-       </property>
-      </item>
-      <item row="1" column="0">
-       <property name="text">
-        <string>41</string>
-       </property>
-      </item>
-      <item row="1" column="1">
-       <property name="text">
-        <string>5</string>
-       </property>
-      </item>
-      <item row="1" column="2">
-       <property name="text">
-        <string>8</string>
-       </property>
-      </item>
-      <item row="2" column="0">
-       <property name="text">
-        <string>77</string>
-       </property>
-      </item>
-      <item row="2" column="1">
-       <property name="text">
-        <string>888</string>
-       </property>
-      </item>
-      <item row="2" column="2">
-       <property name="text">
-        <string>99</string>
-       </property>
-      </item>
-     </widget>
      <widget class="QLabel" name="record_lb">
       <property name="geometry">
        <rect>
@@ -652,6 +553,96 @@ padding:0px 40px;
       </property>
       <property name="text">
        <string>BACK</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="opponent">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>180</y>
+        <width>481</width>
+        <height>192</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTableWidget {
+    background-color: #f5f0e6; /* نفس لون الخلفية تقريبا */
+    border: 2px solid #a97c50;
+    gridline-color: #a97c50;
+    font-family: &quot;Segoe UI&quot;, sans-serif;
+    font-size: 14px;
+    color: #3e3e3e;
+    selection-background-color: #d8c3a5;  /* لون التحديد */
+    selection-color: #000000;
+}
+
+QHeaderView::section {
+    background-color: #a97c50;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border: 1px solid #8c5e3c;
+}
+
+QTableCornerButton::section {
+    background-color: #a97c50;
+    border: 1px solid #8c5e3c;
+}
+
+QTableWidget::item {
+    padding: 5px;
+}
+
+QTableWidget::item:selected {
+    background-color: #d8c3a5;
+    color: black;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="badge">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>400</y>
+        <width>49</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="name">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>400</y>
+        <width>171</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 0, 0, 0);
+border: 2px solid #8B5E3C;
+border-radius: 10px;
+background-color: #f2e8dc;
+padding:0px 40px;
+
+								color: #5c3b1e;
+								font-family: 'Georgia', serif;
+								font-size: 14px;
+								font-weight: bold;
+								letter-spacing: 1px;
+								text-align: center;
+								text-shadow: 1px 1px 2px #e0c5a1;
+							</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
       </property>
      </widget>
     </widget>
@@ -927,7 +918,7 @@ background-color: #f2e8dc;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>770</width>
+     <width>784</width>
      <height>21</height>
     </rect>
    </property>

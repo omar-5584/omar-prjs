@@ -1,5 +1,6 @@
 #include "game.h"
 #include "source.h"
+#include <QTableWidget>
 
 game::game(QWidget *parent)
     : QMainWindow(parent)
@@ -14,6 +15,27 @@ game::game(QWidget *parent)
 game::~game()
 {
     delete ui;
+}
+
+void game::adjustFontSizeToLabel(QLabel* label, const QString& text)
+{
+    QFont font = label->font();
+    int fontSize = 30;
+    font.setPointSize(fontSize);
+
+    QFontMetrics fm(font);
+    QRect rect = fm.boundingRect(label->rect(), Qt::AlignCenter | Qt::TextWordWrap, text);
+
+
+    while ((rect.width() > label->width() || rect.height() > label->height()) && fontSize > 1) {
+        fontSize--;
+        font.setPointSize(fontSize);
+        fm = QFontMetrics(font);
+        rect = fm.boundingRect(label->rect(), Qt::AlignCenter | Qt::TextWordWrap, text);
+    }
+
+    label->setFont(font);
+    label->setText(text);
 }
 
 void game::UserStatus(userStatus status)
@@ -67,28 +89,30 @@ cmpchoice game::randPicture()
 void game::on_rec_but_play_clicked()
 {
     ui->welcome_page->setCurrentWidget(ui->record_page);
+    on_records_button_clicked();
 }
 void game::on_paper_button_clicked()
 {
     ui->rec_but_play->setVisible(true);
-    randPicture();
+    cmpchoice com = randPicture();
     ui->play_widget->show();
     QPixmap view(":/game/paper hand.png");
     ui->user_ch->setPixmap(view.scaled(ui->user_ch->size() * 0.8, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
     ui->user_ch->setScaledContents(false);
     ui->user_ch->setAlignment(Qt::AlignCenter);
+    UserStatus(WhoWins(cmpchoice::paper, com));
 }
 
 void game::on_scissor_button_clicked()
 {
     ui->rec_but_play->setVisible(true);
-    randPicture();
+    cmpchoice com = randPicture();
     ui->play_widget->show();
     QPixmap view(":/game/scissor hand.png");
     ui->user_ch->setPixmap(view.scaled(ui->user_ch->size() * 0.8, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
     ui->user_ch->setScaledContents(false);
     ui->user_ch->setAlignment(Qt::AlignCenter);
-
+    UserStatus(WhoWins(cmpchoice::scissor, com));
 }
 
 void game::on_play_button_clicked()
@@ -112,7 +136,84 @@ void game::on_back_from_play_clicked()
 void game::on_records_button_clicked()
 {
     ui->welcome_page->setCurrentWidget(ui->record_page);
+
+    ui->opponent->setRowCount(2);
+    ui->opponent->setColumnCount(4);
+
+    QStringList headers;
+    headers << "name" << "Wins" << "Loses" << "Ties";
+    ui->opponent->setHorizontalHeaderLabels(headers);
+
+    
+    ui->opponent->horizontalHeader()->setFont(QFont("Segoe UI", 12, QFont::Bold));
+    ui->opponent->horizontalHeader()->setStyleSheet("color: white; background-color: #a97c50;");
+
+    
+    auto createItem = [](const QString& text, bool bold = false) {
+        QTableWidgetItem* item = new QTableWidgetItem(text);
+        item->setTextAlignment(Qt::AlignCenter);
+        item->setFont(QFont("Segoe UI", 12, bold ? QFont::Bold : QFont::Normal));
+        item->setForeground(QBrush(QColor("#3e3e3e")));  
+        return item;
+        };
+
+    
+    ui->opponent->setItem(0, 0, createItem("user", true));
+    ui->opponent->setItem(0, 1, createItem(QString::number(user_points.wins)));
+    ui->opponent->setItem(0, 2, createItem(QString::number(user_points.loses)));
+    ui->opponent->setItem(0, 3, createItem(QString::number(user_points.ties)));
+
+   
+    ui->opponent->setItem(1, 0, createItem("opponent", true));
+    ui->opponent->setItem(1, 1, createItem(QString::number(user_points.loses)));
+    ui->opponent->setItem(1, 2, createItem(QString::number(user_points.wins)));
+    ui->opponent->setItem(1, 3, createItem(QString::number(user_points.ties)));
+
+    
+    ui->opponent->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->opponent->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+   
+    ui->opponent->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    
+    ui->badge->setVisible(0);
+
+    if (user_points.wins > user_points.loses)
+    {
+        ui->badge->setVisible(1);
+
+        QPixmap view50(":/game/winner.png");
+        ui->badge->setPixmap(view50.scaled(ui->badge->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+        ui->badge->setScaledContents(true);
+
+ 
+
+
+        ui->name->setText("user");
+        adjustFontSizeToLabel(ui->name, "user");
+
+        
+    }
+    else if (user_points.wins < user_points.loses)
+    {
+        ui->badge->setVisible(1);
+
+        QPixmap view51(":/game/winner.png");
+        ui->badge->setPixmap(view51.scaled(ui->badge->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+        ui->badge->setScaledContents(true);
+
+        ui->name->setText("opponent");
+        adjustFontSizeToLabel(ui->name, "opponent");
+    }
+    else if (user_points.wins == user_points.loses)
+    {
+        ui->name->setText("(tie)");
+        adjustFontSizeToLabel(ui->name, "(tie)");
+    }
+
 }
+
+
 
 void game::on_back_from_rec_clicked()
 {
@@ -124,13 +225,15 @@ void game::on_back_from_rec_clicked()
 void game::on_rock_button_clicked()
 {
     ui->rec_but_play->setVisible(true);
-    randPicture();
+     cmpchoice com= randPicture();
     ui->play_widget->show();
     
     QPixmap view(":/game/rock hand.png");
     ui->user_ch->setPixmap(view.scaled(ui->user_ch->size()*0.8, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
     ui->user_ch->setScaledContents(false);
     ui->user_ch->setAlignment(Qt::AlignCenter);
+
+    UserStatus(WhoWins(cmpchoice::rock, com));
 
 }
 

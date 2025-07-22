@@ -13,5 +13,6 @@
         <file>stone.png</file>
         <file>up-arrow.png</file>
         <file>vs.png</file>
+        <file>winner.png</file>
     </qresource>
 </RCC>

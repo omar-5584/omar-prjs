@@ -13,7 +13,7 @@ struct scores
 extern scores user_points;
 
 cmpchoice randomchoice();
-scores user_points;
+
 
 
 userStatus WhoWins (cmpchoice user, cmpchoice computer);

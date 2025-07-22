@@ -28,6 +28,7 @@ private slots:
     void on_play_button_clicked();
     void on_back_from_play_clicked();
     void on_records_button_clicked();
+    void adjustFontSizeToLabel(QLabel* label, const QString& text);
     void on_back_from_rec_clicked();
     cmpchoice randPicture();
     void on_rec_but_play_clicked();

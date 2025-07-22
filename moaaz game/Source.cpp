@@ -1,5 +1,6 @@
 #include"source.h"
 #include"game.h"
+scores user_points;
 userStatus WhoWins(cmpchoice user, cmpchoice computer)
 {
 	if (user == cmpchoice::rock)

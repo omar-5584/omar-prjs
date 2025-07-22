@@ -43,7 +43,7 @@
 					</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="welcome_pagePage1">
      <widget class="QLabel" name="label">
@@ -632,14 +632,18 @@ padding:0px 40px;
      <widget class="QLabel" name="the_title">
       <property name="geometry">
        <rect>
-        <x>260</x>
-        <y>30</y>
-        <width>221</width>
-        <height>41</height>
+        <x>230</x>
+        <y>20</y>
+        <width>311</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">
+       <string notr="true">border: 2px solid #8B5E3C;
+border-radius: 10px;
+background-color: #f2e8dc;
+padding:0px 40px;
+
 								color: #5c3b1e;
 								font-family: 'Georgia', serif;
 								font-size: 22px;
@@ -647,7 +651,7 @@ padding:0px 40px;
 								letter-spacing: 1px;
 								text-align: center;
 								text-shadow: 1px 1px 2px #e0c5a1;
-</string>
+							</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::Shape::NoFrame</enum>

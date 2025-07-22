@@ -19,19 +19,19 @@ void game::UserStatus(userStatus status)
 {
     if (status == userStatus::win)
     {
-        QString text = "Win";
+        QString text = "Win +1";
         ui->play_status->setText("<span style='color: green;'>" + text + "</span>");
     }
 
     else if (status == userStatus::tie)
     {
-        QString text = "Tie";
+        QString text = "Tie +0";
         ui->play_status->setText("<span style='color: gray;'>" + text + "</span>");
     }
 
     else if (status == userStatus::lose)
     {
-        QString text = "Lose";
+        QString text = "Lose -1";
         ui->play_status->setText("<span style='color: red;'>" + text + "</span>");
     }
 }
@@ -84,6 +84,7 @@ void game::on_back_from_rec_clicked()
 
 void game::on_rock_button_clicked()
 {
+    
     ui->play_widget->show();
     
     QPixmap view(":/game/rock hand.png");

@@ -1,6 +1,6 @@
 #include"source.h"
 #include"game.h"
-void WhoWins(cmpchoice user, cmpchoice computer)
+userStatus WhoWins(cmpchoice user, cmpchoice computer)
 {
 	if (user == cmpchoice::rock)
 	{
@@ -8,15 +8,17 @@ void WhoWins(cmpchoice user, cmpchoice computer)
 		{
 			user_points.ties++;
 
-			UserStatus(userStatus::tie);
+			return userStatus::tie;
 		}
 		else if (computer == paper)
 		{
 			user_points.loses++;
+			return userStatus::lose;
 		}
 		else if (computer == scissor)
 		{
 			user_points.wins++;
+			return userStatus::win;
 		}
 	}
 
@@ -26,14 +28,17 @@ void WhoWins(cmpchoice user, cmpchoice computer)
 		if (computer == paper)
 		{
 			user_points.ties++;
+			return userStatus::tie;
 		}
 		else if (computer == scissor)
 		{
 			user_points.loses++;
+			return userStatus::lose;
 		}
 		else if (computer == rock)
 		{
 			user_points.wins++;
+			return userStatus::win;
 		}
 	}
 
@@ -43,14 +48,17 @@ void WhoWins(cmpchoice user, cmpchoice computer)
 		if (computer == scissor)
 		{
 			user_points.ties++;
+			return userStatus::tie;
 		}
 		else if (computer == rock)
 		{
 			user_points.loses++;
+			return userStatus::lose;
 		}
 		else if (computer == paper)
 		{
 			user_points.wins++;
+			return userStatus::win;
 		}
 	}
 }

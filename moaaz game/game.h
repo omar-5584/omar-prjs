@@ -5,6 +5,7 @@
 #include <QApplication>
 #include <QPushButton>
 #include<QString>
+#include"source.h"
 using namespace std;
 namespace Ui { class Register; };
 
@@ -28,7 +29,8 @@ private slots:
     void on_back_from_play_clicked();
     void on_records_button_clicked();
     void on_back_from_rec_clicked();
-    
+    cmpchoice randPicture();
+    void on_rec_but_play_clicked();
 private:
     Ui::gameClass* ui;
 };

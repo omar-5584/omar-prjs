@@ -62,3 +62,9 @@ userStatus WhoWins(cmpchoice user, cmpchoice computer)
 		}
 	}
 }
+#include "source.h"
+
+cmpchoice randomchoice()
+{
+    return cmpchoice((rand() % 3) + 1);
+}

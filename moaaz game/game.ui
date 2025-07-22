@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>781</width>
-    <height>718</height>
+    <width>784</width>
+    <height>668</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -242,7 +242,7 @@ background-color: #f2e8dc;
        <rect>
         <x>280</x>
         <y>60</y>
-        <width>211</width>
+        <width>231</width>
         <height>41</height>
        </rect>
       </property>
@@ -261,15 +261,15 @@ background-color: #f2e8dc;
 							</string>
       </property>
       <property name="text">
-       <string>PLAY AND WIN</string>
+       <string>Ready to play?!🎮</string>
       </property>
      </widget>
      <widget class="QPushButton" name="back_from_play">
       <property name="geometry">
        <rect>
-        <x>340</x>
-        <y>560</y>
-        <width>82</width>
+        <x>470</x>
+        <y>570</y>
+        <width>111</width>
         <height>42</height>
        </rect>
       </property>
@@ -463,6 +463,33 @@ border-radius: 10px;
         <bool>true</bool>
        </property>
       </widget>
+     </widget>
+     <widget class="QPushButton" name="rec_but_play">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>570</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+								background-color: #c28e5c;
+								color: #2c1b10;
+								font-family: 'Segoe UI', sans-serif;
+								font-size: 16px;
+								font-weight: bold;
+								border: 2px solid #a56c3d;
+								border-radius: 10px;
+								padding: 8px 16px;
+								letter-spacing: 1px;
+								text-transform: uppercase;
+							</string>
+      </property>
+      <property name="text">
+       <string>RECORDS</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="record_page">
@@ -900,7 +927,7 @@ background-color: #f2e8dc;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>781</width>
+     <width>770</width>
      <height>21</height>
     </rect>
    </property>

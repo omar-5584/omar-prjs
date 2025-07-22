@@ -10,6 +10,9 @@ struct scores
 	int loses;
 	int ties;
 };
+extern scores user_points;
+
+cmpchoice randomchoice();
 scores user_points;
 
 

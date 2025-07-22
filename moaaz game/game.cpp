@@ -1,4 +1,5 @@
 #include "game.h"
+#include "source.h"
 
 game::game(QWidget *parent)
     : QMainWindow(parent)
@@ -12,6 +13,27 @@ game::game(QWidget *parent)
 game::~game()
 {
     delete ui;
+}
+
+void game::UserStatus(userStatus status)
+{
+    if (status == userStatus::win)
+    {
+        QString text = "Win";
+        ui->play_status->setText("<span style='color: green;'>" + text + "</span>");
+    }
+
+    else if (status == userStatus::tie)
+    {
+        QString text = "Tie";
+        ui->play_status->setText("<span style='color: gray;'>" + text + "</span>");
+    }
+
+    else if (status == userStatus::lose)
+    {
+        QString text = "Lose";
+        ui->play_status->setText("<span style='color: red;'>" + text + "</span>");
+    }
 }
 
 void game::on_paper_button_clicked()

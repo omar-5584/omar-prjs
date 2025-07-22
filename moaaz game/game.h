@@ -15,6 +15,8 @@ class game : public QMainWindow
 public:
     explicit game(QWidget *parent = nullptr);
     ~game();
+    void UserStatus(userStatus status);
+   
 
 private slots:
     void on_back_from_instructions_clicked();
@@ -26,6 +28,7 @@ private slots:
     void on_back_from_play_clicked();
     void on_records_button_clicked();
     void on_back_from_rec_clicked();
+    
 private:
     Ui::gameClass* ui;
 };

@@ -6,6 +6,7 @@ game::game(QWidget *parent)
 {
     ui->setupUi(this);
     ui->welcome_page->setCurrentWidget(ui->welcome_pagePage1);
+  
     
 }
 
@@ -41,8 +42,13 @@ cmpchoice game::randPicture()
     }
     return rand;
 }
+void game::on_rec_but_play_clicked()
+{
+    ui->welcome_page->setCurrentWidget(ui->record_page);
+}
 void game::on_paper_button_clicked()
 {
+    ui->rec_but_play->setVisible(true);
     randPicture();
     ui->play_widget->show();
     QPixmap view(":/game/paper hand.png");
@@ -53,6 +59,7 @@ void game::on_paper_button_clicked()
 
 void game::on_scissor_button_clicked()
 {
+    ui->rec_but_play->setVisible(true);
     randPicture();
     ui->play_widget->show();
     QPixmap view(":/game/scissor hand.png");
@@ -64,6 +71,7 @@ void game::on_scissor_button_clicked()
 
 void game::on_play_button_clicked()
 {
+    ui->rec_but_play->setVisible(false);
     ui->welcome_page->setCurrentWidget(ui->play_page);
     ui->play_widget->hide();
     QPixmap view(":/game/vs.png");
@@ -93,6 +101,7 @@ void game::on_back_from_rec_clicked()
 
 void game::on_rock_button_clicked()
 {
+    ui->rec_but_play->setVisible(true);
     randPicture();
     ui->play_widget->show();
     
@@ -153,13 +162,7 @@ void game::on_instruction_button_clicked()
     ui->arrow4_4->setScaledContents(true);
 
 
-    /*QPixmap view9(":/game/sign-in.png");
-    ui->arrow_in->setPixmap(view9.scaled(ui->arrow_in->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
-    ui->arrow_in->setScaledContents(true);*/
-
-   /* QPixmap view10(":/game/logout.png");
-    ui->arrow_out->setPixmap(view10.scaled(ui->arrow_out->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
-    ui->arrow_out->setScaledContents(true);*/
+    
 
 }
 

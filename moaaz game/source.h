@@ -2,7 +2,8 @@
 
 
 
-
+#include<cstdlib>
+#include<iostream>
 
 enum cmpchoice { rock = 1, paper, scissor };
 struct scores
@@ -11,4 +12,6 @@ struct scores
 	int loses;
 	int ties;
 };
-scores user_points;
+extern scores user_points;
+
+cmpchoice randomchoice();

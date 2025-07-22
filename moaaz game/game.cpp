@@ -14,8 +14,35 @@ game::~game()
     delete ui;
 }
 
+void game::randPicture()
+{
+    cmpchoice rand = randomchoice();
+
+    if (rand == cmpchoice::paper)
+    {
+        QPixmap view(":/game/paper hand.png");
+        ui->cmp_ch->setPixmap(view.scaled(ui->cmp_ch->size() * 0.8, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+        ui->cmp_ch->setScaledContents(false);
+        ui->cmp_ch->setAlignment(Qt::AlignCenter);
+    }
+    else if (rand == cmpchoice::rock)
+    {
+        QPixmap view(":/game/rock hand.png");
+        ui->cmp_ch->setPixmap(view.scaled(ui->cmp_ch->size() * 0.8, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+        ui->cmp_ch->setScaledContents(false);
+        ui->cmp_ch->setAlignment(Qt::AlignCenter);
+    }
+    else if (rand == cmpchoice::scissor)
+    {
+        QPixmap view(":/game/scissor hand.png");
+        ui->cmp_ch->setPixmap(view.scaled(ui->cmp_ch->size() * 0.8, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+        ui->cmp_ch->setScaledContents(false);
+        ui->cmp_ch->setAlignment(Qt::AlignCenter);
+    }
+}
 void game::on_paper_button_clicked()
 {
+    randPicture();
     ui->play_widget->show();
     QPixmap view(":/game/paper hand.png");
     ui->user_ch->setPixmap(view.scaled(ui->user_ch->size() * 0.8, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
@@ -25,6 +52,7 @@ void game::on_paper_button_clicked()
 
 void game::on_scissor_button_clicked()
 {
+    randPicture();
     ui->play_widget->show();
     QPixmap view(":/game/scissor hand.png");
     ui->user_ch->setPixmap(view.scaled(ui->user_ch->size() * 0.8, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
@@ -60,8 +88,11 @@ void game::on_back_from_rec_clicked()
     ui->welcome_page->setCurrentWidget(ui->welcome_pagePage1);
 }
 
+
+
 void game::on_rock_button_clicked()
 {
+    randPicture();
     ui->play_widget->show();
     
     QPixmap view(":/game/rock hand.png");

@@ -27,7 +27,7 @@ private slots:
     void on_back_from_play_clicked();
     void on_records_button_clicked();
     void on_back_from_rec_clicked();
-    void randPicture();
+    cmpchoice randPicture();
 private:
     Ui::gameClass* ui;
 };

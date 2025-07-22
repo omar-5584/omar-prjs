@@ -14,7 +14,7 @@ game::~game()
     delete ui;
 }
 
-void game::randPicture()
+cmpchoice game::randPicture()
 {
     cmpchoice rand = randomchoice();
 
@@ -39,6 +39,7 @@ void game::randPicture()
         ui->cmp_ch->setScaledContents(false);
         ui->cmp_ch->setAlignment(Qt::AlignCenter);
     }
+    return rand;
 }
 void game::on_paper_button_clicked()
 {

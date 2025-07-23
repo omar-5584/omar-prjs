@@ -2,6 +2,7 @@
 #include"includes.h"
 
 
+
 /// ************************	problem 1	***********************///
 
 
@@ -37,3 +38,25 @@ void fillArrayfrom1toN(int arr[],int& arrlength);
 void arrayShuffling(int arr[],int arrlength);
 void reverseArrayByCopy(int arr1[], int arr2[], int arrlength);
 void inputInArray(int arr[], int& arrlength,int num );
+
+
+
+
+///----------------------  project math game --------------------///
+
+
+enum operation { plus = 1, minus, cross, division, mix };
+enum level { easy = 1, med, hard, mix };
+struct stats
+{
+	short true_answers = 0;
+	short false_answers = 0;
+};
+struct stQuestion
+{
+	level question_Level;
+	operation question_Operation;
+	int correct_answer = 0;
+	int user_answer = 0;
+	bool true_ans = false;
+};

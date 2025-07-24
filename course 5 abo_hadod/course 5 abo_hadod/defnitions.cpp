@@ -323,11 +323,23 @@ void inputInArray(int arr[], int& arrlength, int num)
 
 
 
+stQuestion DetermineFeaturesOfQuestions(stQuestion& questions)
+{
+	int number;
+	cout << "Choose the level ( [1] Easy - [2] Mid - [3] hard - [4] mix ) : ";
+	cin >> number;
+	questions.question_Level = (level)number;
 
+	cout << "Choose the operation  ( [1] add - [2] sub - [3] multiply - [4] div - [5] mix ) : ";
+	cin >> number;
+	questions.question_Operation = (operation)number;
+
+	return questions;
+}
 
 int calc_answer(int first, int second, operation oprt)
 {
-	int correct_answer;
+	int correct_answer=0;
 	cout << first;
 	if (oprt == operation::plus)
 	{
@@ -355,6 +367,78 @@ int calc_answer(int first, int second, operation oprt)
 	return correct_answer;
 }
 
+stats assessment(int right_answer,stats& user)
+{
+	int user_answer = 0;
+	cin >> user_answer;
+
+	if (user_answer == right_answer)
+	{
+		user.true_answers++;
+		cout << "Your answer is right ;) ";  system("color 2F");
+	}
+	else if (user_answer != right_answer)
+	{
+		user.false_answers++;
+		cout << "Your answer is Wrong :( the right answer is : "<<right_answer;  system("color 4F");
+	}
+
+	cout << endl;
+
+	return user;
+}
+
+string show_level(level lev)
+{
+	switch (lev)
+	{
+	case level::easy: return "easy";
+	case level::hard: return "hard";
+	case level::med: return "med";
+	case level::mix: return "mix";
+	}
+
+}
+
+string show_operation(operation oprt)
+{
+	switch (oprt)
+	{
+	case operation::plus: return "plus";
+	case operation::minus: return "minus";
+	case operation::cross: return "cross";
+	case operation::division: return "division";
+	case operation::mixed: return "mix";
+	}
+	
+}
+
+void FinalMessage(stats user , stQuestion questions)
+{
+	 system("pause");
+	bool status = (user.true_answers >= user.false_answers) ? true : false;
+
+	cout <<"\n----------------------------------------------------\n" << "student status : ";
+
+	if (status)
+	{
+		cout << "PASSED"; system("color 2F");
+	}
+	else
+	{
+		cout << "FAILED"; system("color 4F");
+	}
+	cout << "\n----------------------------------------------------\n";
+
+	cout << "Question level : " << show_level(questions.question_Level)<<endl;
+
+	cout << "Question operations type : " << show_operation(questions.question_Operation)<< endl;
+
+	cout << "Number of true Questions : " << user.true_answers << endl;
+
+	cout << "Number of false Questions : " << user.false_answers << endl;
+}
+
 int generateRandQuestion(stQuestion& question)
 {
 	int first, second;
@@ -366,7 +450,7 @@ int generateRandQuestion(stQuestion& question)
 	first = generateRandomNum(1*pow(10,question.question_Level-1),10* pow(10, question.question_Level - 1));
 	second = generateRandomNum(1 * pow(10, question.question_Level - 1), 10 * pow(10, question.question_Level - 1));
 	
-	if (question.question_Operation == operation::mix)
+	if (question.question_Operation == operation::mixed)
 	{
 		question.question_Operation = (operation)generateRandomNum(1, 4);
 	}
@@ -377,16 +461,21 @@ int generateRandQuestion(stQuestion& question)
 
 
 
+
+
 void math_game()
 {
+	stQuestion questions; stats user;
 	int trial;
 	cout << "How Many Questions do you want to answer ?";
 	cin >> trial;
+	DetermineFeaturesOfQuestions(questions);
 	while (trial--)
 	{
-		/// allprogram
-
+		assessment(generateRandQuestion(questions), user);
 	}
+
+	FinalMessage(user, questions);
 	cout << "\n\n\t\tPractise will make you better.";
 }
 

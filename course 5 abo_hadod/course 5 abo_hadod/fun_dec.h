@@ -45,7 +45,7 @@ void inputInArray(int arr[], int& arrlength,int num );
 ///----------------------  project math game --------------------///
 
 
-enum operation { plus = 1, minus, cross, division, mix };
+enum operation { plus = 1, minus, cross, division, mixed };
 enum level { easy = 1, med, hard, mix };
 struct stats
 {
@@ -60,7 +60,10 @@ struct stQuestion
 	int user_answer = 0;
 	bool true_ans = false;
 };
-
+stQuestion DetermineFeaturesOfQuestions(stQuestion& questions);
 void math_game();
 int generateRandQuestion(stQuestion& question);
 int calc_answer(int first, int second, operation oprt);
+stats assessment(int right_answer, stats& user);
+string show_level(level lev);
+string show_operation(operation oprt);

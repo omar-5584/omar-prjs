@@ -86,7 +86,7 @@ int main()
 	//}
 	//printArray(arr2,arrlength);
 
-
+	math_game();
 	return 0;
 
 

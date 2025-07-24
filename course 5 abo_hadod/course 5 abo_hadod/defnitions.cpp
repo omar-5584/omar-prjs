@@ -315,3 +315,79 @@ void inputInArray(int arr[], int& arrlength, int num)
 	arr[arrlength] = num;
 	arrlength++;
 }
+
+
+
+
+///----------------------  project math game --------------------///
+
+
+
+
+
+int calc_answer(int first, int second, operation oprt)
+{
+	int correct_answer;
+	cout << first;
+	if (oprt == operation::plus)
+	{
+		cout << " + ";
+		correct_answer = first + second;
+	}
+	else if (oprt == operation::minus)
+	{
+		cout << " - ";
+		correct_answer = first - second;
+	}
+
+	else if (oprt == operation::cross)
+	{
+		cout << " x ";
+		correct_answer = first * second;
+	}
+
+	else if (oprt == operation::division)
+	{
+		cout << " / ";
+		correct_answer = first / second;
+	}
+	cout << second <<" = ";
+	return correct_answer;
+}
+
+int generateRandQuestion(stQuestion& question)
+{
+	int first, second;
+	if (question.question_Level==level::mix)
+	{
+		question.question_Level = (level)generateRandomNum(1,3);
+	}
+	
+	first = generateRandomNum(1*pow(10,question.question_Level-1),10* pow(10, question.question_Level - 1));
+	second = generateRandomNum(1 * pow(10, question.question_Level - 1), 10 * pow(10, question.question_Level - 1));
+	
+	if (question.question_Operation == operation::mix)
+	{
+		question.question_Operation = (operation)generateRandomNum(1, 4);
+	}
+	
+	return calc_answer(first, second,question.question_Operation);
+}
+
+
+
+
+void math_game()
+{
+	int trial;
+	cout << "How Many Questions do you want to answer ?";
+	cin >> trial;
+	while (trial--)
+	{
+		/// allprogram
+
+	}
+	cout << "\n\n\t\tPractise will make you better.";
+}
+
+

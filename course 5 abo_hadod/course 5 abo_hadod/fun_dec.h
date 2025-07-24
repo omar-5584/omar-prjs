@@ -60,3 +60,7 @@ struct stQuestion
 	int user_answer = 0;
 	bool true_ans = false;
 };
+
+void math_game();
+int generateRandQuestion(stQuestion& question);
+int calc_answer(int first, int second, operation oprt);

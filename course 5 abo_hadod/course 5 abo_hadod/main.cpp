@@ -75,16 +75,18 @@ int main()
 	//cout << "\nArray Length:" << arrlength<<endl;
 	//printArray(arr, arrlength);
 
-	int arr1[100], arr2[100],  arrlength = 0;
-	arrlength = GetPosNum("Enter the length you want:");
-	FillArrayWithRandomNumbers(arr1,arrlength);
-	printArray(arr1, arrlength);
-	for (int i = 0;i < arrlength;)
-	{
-		inputInArray(arr2, i, arr1[i]);
+	//int arr1[100], arr2[100],  arrlength = 0;
+	//arrlength = GetPosNum("Enter the length you want:");
+	//FillArrayWithRandomNumbers(arr1,arrlength);
+	//printArray(arr1, arrlength);
+	//for (int i = 0;i < arrlength;)
+	//{
+	//	inputInArray(arr2, i, arr1[i]);
 
-	}
-	printArray(arr2,arrlength);
+	//}
+	//printArray(arr2,arrlength);
+
+
 	return 0;
 
 
